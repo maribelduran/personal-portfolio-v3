@@ -1,6 +1,6 @@
 const Hero = ({ heading, intro }: { heading: string; intro: string }) => {
   return (
-    <section >
+    <section id="center">
       <div>
         <h1>{heading}</h1>
         <p>
