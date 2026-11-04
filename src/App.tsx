@@ -2,13 +2,20 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 import Hero from "./components/hero";
+import ProjectCard from './components/ProjectCard';
 
 function App() {
   return (
     <>
       <Hero heading="Hello Again World!" intro="Welcome to my playground!" />
 
-      <div className="ticks"></div>
+      <section id="projects">
+        <h2>Projects</h2>
+        <div >
+          <ProjectCard title="Tic Tac Toe" description="A user can play a game of Tic Tac Toe with the computer and choose whether they want to play as X or O. The game will reset as soon as it's over. Built using: Javascript, jQuery, HTML, CSS3, and Bootstrap." href="https://maribelduran.github.io/tic-tac-toe/" />
+          <ProjectCard title="Ask Me" description="Students are welcomed to ask me questions about programming, my career, or hobbies. They can submit their questions through the contact form or embedded Padlet board." href="https://maribelduran.github.io/ask-me/" />
+        </div>
+      </section>
 
       <section id="next-steps">
         <div id="docs">
