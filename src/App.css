@@ -69,6 +69,43 @@
   }
 }
 
+#projects {
+  padding: 32px 20px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.project-card {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  h3 {
+    margin: 0;
+    color: var(--text-h);
+  }
+
+  a {
+    margin-top: auto;
+  }
+}
+
+
 #next-steps {
   display: flex;
   border-top: 1px solid var(--border);

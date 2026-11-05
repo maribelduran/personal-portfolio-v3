@@ -1,7 +1,7 @@
 const ProjectCard = ({ title, description, href }: { title: string; description: string; href: string }) => {
     return (
 
-        <article>
+        <article className="project-card">
             <h3>{title}</h3>
             <p>
                 {description}
