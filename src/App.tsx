@@ -4,7 +4,14 @@ import './App.css'
 import Hero from "./components/Hero";
 import ProjectCard from './components/ProjectCard';
 
-const projects = [
+type Project = {
+  id: string;
+  title: string;
+  description: string;
+  href: string;
+};
+
+const projects: Project[] = [
   {
     id: "tic-tac-toe",
     title: "Tic Tac Toe",
