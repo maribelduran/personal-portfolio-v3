@@ -12,7 +12,7 @@ interface NavItem {
 const NAV_ITEMS: NavItem[] = [
     { label: "Home", href: "/" },
     { label: "Projects", href: "/projects" },
-    { label: "About", href: "/about" },
+    { label: "About Me", href: "/about" },
     { label: "Contact", href: "/contact" },
 ];
 
@@ -31,7 +31,7 @@ export default function Navbar() {
                     href="/"
                     className="text-lg font-bold tracking-tight text-gray-900 dark:text-white"
                 >
-                    YourName<span className="text-blue-600">.dev</span>
+                    MARIBEL DURAN
                 </Link>
 
                 {/* Desktop Links */}
@@ -43,8 +43,8 @@ export default function Navbar() {
                                 <Link
                                     href={item.href}
                                     className={`text-sm font-medium transition-colors ${isActive
-                                            ? "text-blue-600 dark:text-blue-400"
-                                            : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                                        ? "text-blue-600 dark:text-blue-400"
+                                        : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
                                         }`}
                                 >
                                     {item.label}
@@ -87,8 +87,8 @@ export default function Navbar() {
                                         href={item.href}
                                         onClick={() => setIsOpen(false)}
                                         className={`block rounded-md px-3 py-2 text-base font-medium ${isActive
-                                                ? "bg-blue-50 text-blue-600 dark:bg-blue-950/50 dark:text-blue-400"
-                                                : "text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+                                            ? "bg-blue-50 text-blue-600 dark:bg-blue-950/50 dark:text-blue-400"
+                                            : "text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
                                             }`}
                                     >
                                         {item.label}
