@@ -7,14 +7,15 @@ import { usePathname } from "next/navigation";
 interface NavItem {
     label: string;
     href: string;
+    submenu?: NavItem[];
 }
 
 const NAV_ITEMS: NavItem[] = [
     { label: "Home", href: "/" },
-    { label: "About Me", href: "/about" },
-    { label: "Hobbies", href: "/hobbies" },
-    { label: "Giving Back", href: "/givingback" },
-    { label: "Career", href: "/career" },
+    { label: "About Me", href: "/about", submenu: [{ label: "Mission", href: "/about#mission" }, { label: "Values", href: "/about#values" }] },
+    { label: "Hobbies", href: "/hobbies", submenu: [{ label: "Travels", href: "/hobbies#travels" }, { label: "Runs", href: "/hobbies#runs" }, { label: "Music Events", href: "/hobbies#musicevents" }, { label: "Reading", href: "/hobbies#reading" }, { label: "Writing", href: "/hobbies#writing" }] },
+    { label: "Giving Back", href: "/givingback", submenu: [{ label: "Mentorship", href: "/givingback#mentorship" }, { label: "Volunteering", href: "/givingback#volunteering" }, { label: "Fundraising", href: "/givingback#fundraising" }, { label: "Donations", href: "/givingback#donations" }] },
+    { label: "Career", href: "/career", submenu: [{ label: "My Story", href: "/career#mystory" }, { label: "Tech Blogs", href: "/career#techblogs" }, { label: "Toolbox", href: "/career#toolbox" }, { label: "Hacking On", href: "/career#hackingon" }] },
     { label: "Contact", href: "/contact" },
 ];
 
@@ -42,15 +43,43 @@ export default function Navbar() {
                         const isActive = pathname === item.href;
                         return (
                             <li key={item.href}>
-                                <Link
-                                    href={item.href}
-                                    className={`text-sm font-medium transition-colors ${isActive
-                                        ? "text-blue-600 dark:text-blue-400"
-                                        : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
-                                        }`}
-                                >
-                                    {item.label}
-                                </Link>
+
+                                {item.submenu ? (
+                                    <div className="relative group">
+                                        <Link
+                                            href={item.href}
+                                            className={`text-sm font-medium transition-colors ${isActive
+                                                ? "text-blue-600 dark:text-blue-400"
+                                                : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                                                }`}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                        <ul className="absolute left-0 mt-2 hidden w-48 flex-col rounded-md bg-white shadow-lg group-hover:flex dark:bg-gray-800">
+                                            {item.submenu.map((subItem) => (
+                                                <li key={subItem.href}>
+                                                    <Link
+                                                        href={subItem.href}
+                                                        className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700`}
+                                                    >
+                                                        {subItem.label}
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ) : (
+                                    <Link
+                                        href={item.href}
+                                        className={`text-sm font-medium transition-colors ${isActive
+                                            ? "text-blue-600 dark:text-blue-400"
+                                            : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+                                            }`}
+                                    >
+                                        {item.label}
+
+                                    </Link>
+                                )}
                             </li>
                         );
                     })}
