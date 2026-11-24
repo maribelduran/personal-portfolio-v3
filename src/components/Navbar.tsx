@@ -13,9 +13,9 @@ interface NavItem {
 const NAV_ITEMS: NavItem[] = [
     { label: "Home", href: "/" },
     { label: "About Me", href: "/about", submenu: [{ label: "Mission", href: "/about#mission" }, { label: "Values", href: "/about#values" }] },
-    { label: "Hobbies", href: "/hobbies", submenu: [{ label: "Travels", href: "/hobbies#travels" }, { label: "Runs", href: "/hobbies#runs" }, { label: "Music Events", href: "/hobbies#musicevents" }, { label: "Reading", href: "/hobbies#reading" }, { label: "Writing", href: "/hobbies#writing" }] },
+    { label: "Hobbies", href: "/hobbies", submenu: [{ label: "Travels", href: "/hobbies#travels" }, { label: "Runs", href: "/hobbies#runs" }, { label: "Hikes", href: "/hobbies#hikes" }, { label: "Music Events", href: "/hobbies#musicevents" }, { label: "Reading", href: "/hobbies#reading" }, { label: "Writing", href: "/hobbies#writing" }] },
     { label: "Giving Back", href: "/givingback", submenu: [{ label: "Mentorship", href: "/givingback#mentorship" }, { label: "Volunteering", href: "/givingback#volunteering" }, { label: "Fundraising", href: "/givingback#fundraising" }, { label: "Donations", href: "/givingback#donations" }] },
-    { label: "Career", href: "/career", submenu: [{ label: "My Story", href: "/career#mystory" }, { label: "Tech Blogs", href: "/career#techblogs" }, { label: "Toolbox", href: "/career#toolbox" }, { label: "Hacking On", href: "/career#hackingon" }] },
+    { label: "Career", href: "/career", submenu: [{ label: "My Story", href: "/career#mystory" }, { label: "Tech Blogs", href: "/career#techblogs" }, { label: "Hacking On", href: "/career#hackingon" }, { label: "Toolbox", href: "/career#toolbox" }] },
     { label: "Contact", href: "/contact" },
 ];
 
