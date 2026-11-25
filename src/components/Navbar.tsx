@@ -55,18 +55,21 @@ export default function Navbar() {
                                         >
                                             {item.label}
                                         </Link>
-                                        <ul className="absolute left-0 mt-2 hidden w-48 flex-col rounded-md bg-white shadow-lg group-hover:flex dark:bg-gray-800">
-                                            {item.submenu.map((subItem) => (
-                                                <li key={subItem.href}>
-                                                    <Link
-                                                        href={subItem.href}
-                                                        className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700`}
-                                                    >
-                                                        {subItem.label}
-                                                    </Link>
-                                                </li>
-                                            ))}
-                                        </ul>
+                                        <div className="absolute left-0 top-full z-50 hidden w-48 pt-2 group-hover:block group-focus-within:block">
+
+                                            <ul className="flex flex-col rounded-md bg-white shadow-lg dark:bg-gray-800">
+                                                {item.submenu.map((subItem) => (
+                                                    <li key={subItem.href}>
+                                                        <Link
+                                                            href={subItem.href}
+                                                            className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700`}
+                                                        >
+                                                            {subItem.label}
+                                                        </Link>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
                                     </div>
                                 ) : (
                                     <Link
